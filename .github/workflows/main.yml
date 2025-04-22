@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # or your folder (e.g., "dist")
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Critical!
+          publish_dir: ./build  # or your build folder
