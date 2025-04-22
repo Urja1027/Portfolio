@@ -1,0 +1,113 @@
+/* Sophisticated Dark Portfolio Theme - Documents Page */
+:root {
+    --primary-color: #9c27b0;       /* Purple */
+    --secondary-color: #ff4081;     /* Magenta */
+    --dark-color: #121212;         /* Dark background */
+    --medium-color: #1e1e1e;       /* Card background */
+    --light-color: #e1e1e1;        /* Light text */
+    --white: #ffffff;              /* White */
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.edu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.edu h2 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin: 30px 0 20px 0;
+    position: relative;
+    padding-bottom: 10px;
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+.edu h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.edu img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--medium-color);
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    background-color: var(--white);
+    padding: 5px;
+}
+
+.edu img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(156, 39, 176, 0.4);
+    border-color: var(--secondary-color);
+}
+
+/* Document Grid Layout */
+@media (min-width: 768px) {
+    .edu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    
+    .edu h2 {
+        grid-column: 1 / -1;
+    }
+    
+    .edu img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .edu h2 {
+        font-size: 24px;
+    }
+    
+    .edu img {
+        display: block;
+        margin: 10px auto;
+    }
+}

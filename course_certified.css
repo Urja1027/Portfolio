@@ -1,0 +1,191 @@
+/* Certifications & Activities Theme */
+:root {
+    --primary-color: #9c27b0;       /* Purple */
+    --secondary-color: #e91e63;     /* Magenta */
+    --dark-color: #121212;         /* Deep dark background */
+    --medium-color: #1e1e1e;       /* Card backgrounds */
+    --light-color: #e1e1e1;        /* Light text */
+    --white: #ffffff;              /* Pure white for highlights */
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 10px rgba(156, 39, 176, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(233, 30, 99, 0.6); }
+    100% { box-shadow: 0 0 10px rgba(156, 39, 176, 0.3); }
+}
+
+/* Main Container */
+.PASSED {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sections Styling */
+.done, .activity {
+    padding: 30px;
+    background-color: rgba(30, 30, 30, 0.9);
+    border-radius: 8px;
+    animation: fadeInUp 0.8s ease-out;
+    margin-bottom: 40px;
+}
+
+.done {
+    border-left: 4px solid var(--primary-color);
+}
+
+.activity {
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Headings */
+.done h2, .activity h2 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-bottom: 25px;
+    position: relative;
+    animation: slideInFromLeft 0.6s ease-out;
+}
+
+.activity h2 {
+    color: var(--secondary-color);
+}
+
+.done h2::after, .activity h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 120px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    animation: fadeIn 1s ease-out;
+}
+
+.done h2::after {
+    background-color: var(--primary-color);
+}
+
+/* Styled h4 Headings */
+.done h4 {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+    font-size: 20px;
+    margin: 30px 0 15px 0;
+    font-weight: 500;
+    animation: fadeIn 1s ease-out;
+}
+
+.activity h4 {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+    font-size: 20px;
+    margin: 30px 0 15px 0;
+    font-weight: 500;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Certificates Grid */
+.certificate-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Images Styling */
+.done img, .activity img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(156, 39, 176, 0.3);
+    transition: all 0.4s ease;
+    background-color: var(--medium-color);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.activity img {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.3);
+}
+
+/* Dance Images Side-by-Side */
+.dance-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Hover Effects */
+.done img:hover, .activity img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(233, 30, 99, 0.5);
+    animation: glowPulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .done, .activity {
+        padding: 20px;
+    }
+    
+    .done h2, .activity h2 {
+        font-size: 24px;
+    }
+    
+    .done h2::after, .activity h2::after {
+        width: 80px;
+    }
+    
+    .done h4, .activity h4 {
+        font-size: 18px;
+    }
+    
+    .dance-images {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,196 @@
+/* Purple/Magenta Projects Theme */
+:root {
+    --primary-color: #9c27b0;       /* Purple */
+    --secondary-color: #e91e63;     /* Magenta */
+    --dark-color: #121212;         /* Deep dark background */
+    --medium-color: #1e1e1e;       /* Card backgrounds */
+    --light-color: #e1e1e1;        /* Light text */
+    --white: #ffffff;              /* Pure white for highlights */
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Projects Section Styling */
+.Minor, .Major {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(30, 30, 30, 0.9);
+    border-radius: 8px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.Minor {
+    border-left: 4px solid var(--primary-color);
+}
+
+.Major {
+    border-left: 4px solid var(--secondary-color);
+}
+
+.Minor h2, .Major h2 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-bottom: 25px;
+    position: relative;
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+.Major h2 {
+    color: var(--secondary-color);
+}
+
+.Minor h2::after, .Major h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 120px;
+    height: 4px;
+    background-color: var(--secondary-color);
+}
+
+/* Image Grid Styling */
+.Minor {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.Minor img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(156, 39, 176, 0.3);
+    transition: all 0.4s ease;
+    animation: fadeInUp 1s ease-out;
+}
+
+.Minor img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(156, 39, 176, 0.5);
+}
+
+/* Video Player Styling */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.Major video {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 20px rgba(233, 30, 99, 0.3);
+    background-color: #000;
+    transition: all 0.4s ease;
+}
+
+.Major video:hover {
+    box-shadow: 0 0 30px rgba(233, 30, 99, 0.5);
+}
+
+/* Play Button Overlay */
+.video-container::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.video-container:hover::after {
+    color: var(--secondary-color);
+    opacity: 1;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Hide play button when playing */
+.video-container.playing::after {
+    display: none;
+}
+
+/* Video Controls Styling */
+.Major video::-webkit-media-controls {
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+}
+
+.Major video::-webkit-media-controls-play-button,
+.Major video::-webkit-media-controls-mute-button {
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+}
+
+.Major video::-webkit-media-controls-current-time-display,
+.Major video::-webkit-media-controls-time-remaining-display {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Minor, .Major {
+        padding: 20px;
+    }
+    
+    .Minor h2, .Major h2 {
+        font-size: 24px;
+    }
+    
+    .Minor h2::after, .Major h2::after {
+        width: 80px;
+    }
+    
+    .video-container::after {
+        font-size: 40px;
+    }
+}

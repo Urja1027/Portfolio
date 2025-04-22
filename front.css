@@ -1,0 +1,671 @@
+/* Purple/Magenta Portfolio Theme */
+:root {
+    --primary-color: #9c27b0;       /* Purple */
+    --secondary-color: #e91e63;     /* Magenta */
+    --dark-color: #121212;         /* Deep dark background */
+    --medium-color: #1e1e1e;       /* Card backgrounds */
+    --light-color: #e1e1e1;        /* Light text */
+    --white: #ffffff;              /* Pure white for highlights */
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    background-color: var(--dark-color);
+    padding: 20px;
+    border-bottom: 3px solid var(--primary-color);
+    animation: fadeIn 1s ease-out;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#mainphoto {
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 20px rgba(233, 30, 99, 0.3);
+    animation: photoGlow 2s infinite alternate;
+}
+
+@keyframes photoGlow {
+    from {
+        box-shadow: 0 0 10px rgba(233, 30, 99, 0.3);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(233, 30, 99, 0.6);
+    }
+}
+
+nav p {
+    font-size: 16px;
+    color: var(--white);
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(30, 30, 30, 0.8);
+    border-left: 3px solid var(--secondary-color);
+    animation: fadeIn 1.5s ease-out;
+}
+
+nav a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+/* Main Content Sections */
+.aboutme, #base1, .corevalue, .Education, .main2, .projects, .Extras {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Section Headings */
+h2, h3 {
+    position: relative;
+    margin-bottom: 25px;
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+h2::after, h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* About Me Section */
+.aboutme h3 {
+    color: var(--primary-color);
+}
+
+.aboutme h3::after {
+    background-color: var(--primary-color);
+}
+
+.aboutme p {
+    font-size: 18px;
+    color: var(--light-color);
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 4px;
+    line-height: 1.7;
+    border-left: 3px solid var(--primary-color);
+    animation: fadeInUp 1.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.aboutme p:hover {
+    box-shadow: 0 0 20px rgba(156, 39, 176, 0.4);
+}
+
+/* Mission/Vision Section */
+#base1 {
+    display: flex;
+    gap: 30px;
+}
+
+.mission-vision {
+    flex: 1;
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 4px;
+    border-left: 3px solid var(--primary-color);
+    animation: fadeInUp 1.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.mission-vision:hover {
+    box-shadow: 0 0 20px rgba(156, 39, 176, 0.4);
+}
+
+.mission-vision h3 {
+    color: var(--primary-color);
+}
+
+.mission-vision h3::after {
+    background-color: var(--primary-color);
+}
+
+.mission-vision p {
+    font-size: 16px;
+    color: var(--light-color);
+    line-height: 1.6;
+}
+
+/* Core Values Section */
+.corevalue {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 4px;
+    border-left: 3px solid var(--secondary-color);
+    animation: fadeInUp 1.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.corevalue:hover {
+    box-shadow: 0 0 20px rgba(233, 30, 99, 0.4);
+}
+
+.corevalue h3 {
+    color: var(--secondary-color);
+}
+
+.corevalue h3::after {
+    background-color: var(--secondary-color);
+}
+
+.corevalue ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.corevalue li {
+    font-size: 18px;
+    color: var(--light-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.corevalue li:hover {
+    transform: translateX(5px);
+    color: var(--white);
+}
+
+.corevalue img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.corevalue li:hover img {
+    transform: scale(1.2);
+}
+
+/* Education Section (styled like Core Values) */
+.Education {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 4px;
+    border-left: 3px solid var(--primary-color);
+    animation: fadeInUp 1.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.Education:hover {
+    box-shadow: 0 0 20px rgba(156, 39, 176, 0.4);
+}
+
+.Education h3 {
+    color: var(--primary-color);
+}
+
+.Education h3::after {
+    background-color: var(--primary-color);
+}
+
+.Education table {
+    width: 100%;
+    border-collapse: collapse;
+    background: linear-gradient(135deg, rgba(156, 39, 176, 0.2), rgba(233, 30, 99, 0.2));
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.Education th, .Education td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid var(--white);
+    color: var(--light-color);
+}
+
+.Education tr:nth-child(even) {
+    background-color: rgba(30, 30, 30, 0.7);
+}
+
+.Education tr:nth-child(odd) {
+    background-color: rgba(30, 30, 30, 0.9);
+}
+
+.Education tr:first-child {
+    background-color: rgba(156, 39, 176, 0.3);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.Education tr:hover {
+    background-color: rgba(233, 30, 99, 0.2);
+}
+
+.Education a {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.Education a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Skills and Services Section */
+.main2 {
+    display: flex;
+    gap: 30px;
+}
+
+.skills {
+    flex: 1;
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 4px;
+    border-left: 3px solid var(--secondary-color);
+    animation: fadeInUp 1.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.skills:hover {
+    box-shadow: 0 0 20px rgba(233, 30, 99, 0.4);
+}
+
+.skills h3 {
+    color: var(--secondary-color);
+}
+
+.skills h3::after {
+    background-color: var(--secondary-color);
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills li {
+    font-size: 18px;
+    color: var(--light-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.skills li:hover {
+    transform: translateX(5px);
+    color: var(--white);
+}
+
+.skills img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.skills li:hover img {
+    transform: scale(1.2);
+}
+
+/* Projects Section */
+.projects {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 4px;
+    border-left: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.projects:hover {
+    box-shadow: 0 0 20px rgba(156, 39, 176, 0.4);
+}
+
+.projects h3 {
+    color: var(--primary-color);
+}
+
+.projects h3::after {
+    background-color: var(--primary-color);
+}
+
+.minor, .Major {
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.minor {
+    border-left: 3px solid var(--primary-color);
+}
+
+.Major {
+    border-left: 3px solid var(--secondary-color);
+}
+
+.minor:hover, .Major:hover {
+    box-shadow: 0 0 15px rgba(156, 39, 176, 0.3);
+}
+
+.minor h3 {
+    color: var(--primary-color);
+}
+
+.Major h3 {
+    color: var(--secondary-color);
+}
+
+.minor h4, .Major h4 {
+    color: var(--light-color);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.minor ul, .Major ul {
+    padding-left: 20px;
+}
+
+.minor li, .Major li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.Major a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.Major a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+/* Extras Section (Achievements, Workshops, etc.) */
+.Extras {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.achievments, .Workshop, .CourseCerti, .Activities {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 4px;
+    animation: fadeInUp 1.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.achievments {
+    border-left: 3px solid var(--primary-color);
+}
+
+.Workshop {
+    border-left: 3px solid var(--secondary-color);
+}
+
+.CourseCerti {
+    border-left: 3px solid var(--primary-color);
+}
+
+.Activities {
+    border-left: 3px solid var(--secondary-color);
+}
+
+.achievments:hover, .Workshop:hover, .CourseCerti:hover, .Activities:hover {
+    box-shadow: 0 0 20px rgba(156, 39, 176, 0.4);
+}
+
+.achievments h3, .CourseCerti h3 {
+    color: var(--primary-color);
+}
+
+.achievments h3::after, .CourseCerti h3::after {
+    background-color: var(--primary-color);
+}
+
+.Workshop h3, .Activities h2 {
+    color: var(--secondary-color);
+}
+
+.Workshop h3::after, .Activities h2::after {
+    background-color: var(--secondary-color);
+}
+
+.achievments ul, .Workshop ul, .CourseCerti ul, .Activities ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievments li, .Workshop li, .CourseCerti li, .Activities li {
+    font-size: 16px;
+    color: var(--light-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.achievments li:hover, .Workshop li:hover, .CourseCerti li:hover, .Activities li:hover {
+    transform: translateX(5px);
+    color: var(--white);
+}
+
+.achievments img, .Workshop img, .CourseCerti img, .Activities img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.achievments li:hover img, .Workshop li:hover img, 
+.CourseCerti li:hover img, .Activities li:hover img {
+    transform: scale(1.2);
+}
+
+.achievments a, .CourseCerti a{
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.Workshop a,.Activities a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+}
+
+.achievments a:hover,  
+.CourseCerti a:hover  {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+.Workshop a:hover,.Activities a:hover{
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Marquee Section */
+.marquee {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 15px;
+    background-color: rgba(30, 30, 30, 0.9);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 4px;
+    overflow: hidden;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.marquee h3 {
+    color: var(--lights-color);
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+    display: inline-block;
+    padding-left: 100%;
+    margin: 0;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Footer Section */
+footer {
+    background-color: var(--dark-color);
+    padding: 20px;
+    border-top: 3px solid var(--secondary-color);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+footer h6 {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+footer h7 {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 15px;
+    color: var(--light-color);
+    font-size: 14px;
+}
+
+footer img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .Extras {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    #mainphoto {
+        width: 150px;
+        height: 150px;
+    }
+    
+    #base1, .main2 {
+        flex-direction: column;
+    }
+    
+    .aboutme p, .mission-vision, .corevalue li, 
+    .Education td, .skills li, .achievments li, 
+    .Workshop li, .CourseCerti li, .Activities li {
+        font-size: 16px;
+    }
+    
+    .Education th, .Education td {
+        padding: 10px;
+    }
+    
+    footer h7 {
+        display: block;
+        margin: 10px 0;
+    }
+}

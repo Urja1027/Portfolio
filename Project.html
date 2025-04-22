@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Project.css">
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const videoContainers = document.querySelectorAll('.video-container');
+        
+        videoContainers.forEach(container => {
+            const video = container.querySelector('video');
+            
+            container.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                    container.classList.add('playing');
+                } else {
+                    video.pause();
+                    container.classList.remove('playing');
+                }
+            });
+        });
+    });
+    </script>
+<body>
+    <section class="Minor">
+       <h2>Minor project details:</h2>
+       <img src="C:\Users\sir\Desktop\Portfolio\minor 1.jpg">
+       <img src="C:\Users\sir\Desktop\Portfolio\minor2.jpg">
+    </section>
+    <section class="Major">
+        <h2>Major Project details:</h2>
+        <video src="C:\Users\sir\Desktop\Portfolio\videomajor.mp4"></video>
+    </section>
+</body>
+</html>
