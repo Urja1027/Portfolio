@@ -489,7 +489,7 @@ h2::after, h3::after {
     transition: all 0.3s ease;
 }
 .Workshop a, .Activities a {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -499,7 +499,7 @@ h2::after, h3::after {
     text-decoration: underline;
 }
 .Workshop a:hover, .Activities a:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
