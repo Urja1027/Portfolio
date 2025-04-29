@@ -210,7 +210,7 @@ h2::after, h3::after {
     transform: scale(1.2);
 }
 
-/* Education Section */
+/* Education Section - Fixed table header colors */
 .Education {
     background-color: var(--card-color);
     padding: 20px;
@@ -244,14 +244,14 @@ h2::after, h3::after {
     color: var(--text-color);
 }
 
-.Education tr:nth-child(even) {
-    background-color: var(--highlight-color);
-}
-
-.Education tr:first-child {
+.Education th {
     background-color: var(--primary-color);
     color: white;
     font-weight: bold;
+}
+
+.Education tr:nth-child(even) {
+    background-color: var(--highlight-color);
 }
 
 .Education tr:hover {
@@ -530,7 +530,7 @@ h2::after, h3::after {
     100% { transform: translateX(-100%); }
 }
 
-/* Footer Section */
+/* Footer Section - Fixed icon visibility */
 footer {
     background-color: var(--primary-color);
     padding: 20px;
@@ -559,7 +559,7 @@ footer img {
     height: 20px;
     margin-right: 8px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    /* Removed the filter that was making icons white */
 }
 
 footer a {
